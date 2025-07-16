@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-16T19:18:08.982Z",
+    "end": "2025-07-16T19:18:19.427Z",
+    "duration": 10445,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9615b82a-11db-405d-ac3c-9c9cdf736f3a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login\\logintTest.cy.js",
+      "file": "cypress\\e2e\\login\\logintTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+          "title": "Login functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login page",
+              "fullTitle": "Login functionality Login page",
+              "timedOut": null,
+              "duration": 2265,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.loginButton().should('be.visible');\nlogin.loginButton().contains('Login');",
+              "err": {},
+              "uuid": "2d7dffbe-c013-4f16-80b5-28109eee2ad6",
+              "parentUUID": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fforgot your password redirection",
+              "fullTitle": "Login functionality Fforgot your password redirection",
+              "timedOut": null,
+              "duration": 2200,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.forgotYourPasswordButton().should('be.visible');\nlogin.forgotYourPasswordButton().contains('Forgot your password?');\nlogin.forgotYourPasswordButton().click();\ncy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode');",
+              "err": {},
+              "uuid": "c711a1a4-a7fe-49fc-8e5f-421ee84b0168",
+              "parentUUID": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Required fields",
+              "fullTitle": "Login functionality Required fields",
+              "timedOut": null,
+              "duration": 1081,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.loginButton().click();\nlogin.usernameInputField().should('have.class', 'oxd-input--error');\nlogin.passwordInputField().should('have.class', 'oxd-input--error');",
+              "err": {},
+              "uuid": "fa680470-644c-4798-8d13-496eaa4917ab",
+              "parentUUID": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check invalid credentials message",
+              "fullTitle": "Login functionality Check invalid credentials message",
+              "timedOut": null,
+              "duration": 2806,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.usernameInputField().type(fakeEmailAddress);\nlogin.passwordInputField().type('invalid');\nlogin.loginButton().click();\nlogin.invalidCredentialsError().should('be.visible');\ncy.get('.oxd-alert-content-text').should('contain', 'Invalid credentials');",
+              "err": {},
+              "uuid": "d394ea02-8778-4d43-8528-5bbbc7930088",
+              "parentUUID": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successful login",
+              "fullTitle": "Login functionality Successful login",
+              "timedOut": null,
+              "duration": 1998,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.usernameInputField().type(Cypress.env('email'));\nlogin.passwordInputField().type(Cypress.env('password'));\nlogin.loginButton().click();\ncy.url().should('contain', 'dashboard/index');",
+              "err": {},
+              "uuid": "e2725228-83cd-4543-9e82-28f818bb0a67",
+              "parentUUID": "c26f3172-e9c8-4ae0-b08f-d4f26aee107f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2d7dffbe-c013-4f16-80b5-28109eee2ad6",
+            "c711a1a4-a7fe-49fc-8e5f-421ee84b0168",
+            "fa680470-644c-4798-8d13-496eaa4917ab",
+            "d394ea02-8778-4d43-8528-5bbbc7930088",
+            "e2725228-83cd-4543-9e82-28f818bb0a67"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10350,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
