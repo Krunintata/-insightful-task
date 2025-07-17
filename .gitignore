@@ -2,3 +2,7 @@ node_modules
 cypress/videos
 cypress/screenshots
 .env
+# Mochawesome reports
+cypress/reports/
+mochawesome-report/
+mochawesome.json
