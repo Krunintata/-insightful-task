@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-16T21:01:53.323Z",
+    "end": "2025-07-16T21:01:59.538Z",
+    "duration": 6215,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a8806003-573f-4b5c-8a8f-0e689d18fb5c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dashboard\\dashboardTest.cy.js",
+      "file": "cypress\\e2e\\dashboard\\dashboardTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4e34e210-0683-4f28-b81d-e25e2f197945",
+          "title": "Dashboard functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dashboard task",
+              "fullTitle": "Dashboard functionality Dashboard task",
+              "timedOut": null,
+              "duration": 6168,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// redirection to Dashboard page\ndashboard.dashboardSideMenu().click();\n// Identify and validate at least two chart widgets\ndashboard.chartWidget().should('have.length.greaterThan', 1);\n// Include negative assertions (e.g., values or labels that should not be visible)\ndashboard.unassignedChartOption().click();\ndashboard.unassignedChartOption().should('have.attr', 'style').and('include', 'line-through');",
+              "err": {},
+              "uuid": "c79b2ea3-80f5-42ea-aedd-797f3955fe7a",
+              "parentUUID": "4e34e210-0683-4f28-b81d-e25e2f197945",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c79b2ea3-80f5-42ea-aedd-797f3955fe7a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6168,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
