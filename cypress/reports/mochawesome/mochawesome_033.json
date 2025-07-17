@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-17T08:05:37.320Z",
+    "end": "2025-07-17T08:06:18.383Z",
+    "duration": 41063,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a0e9381d-41b4-46c2-9c06-8566212019c4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\recruitment\\recruitmentTest.cy.js",
+      "file": "cypress\\e2e\\recruitment\\recruitmentTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8286304d-b51f-44ff-8d45-a05bbcbb84c3",
+          "title": "Recruitment - Search functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Recruitment task - Filter Vacancy",
+              "fullTitle": "Recruitment - Search functionality Recruitment task - Filter Vacancy",
+              "timedOut": null,
+              "duration": 9589,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "recruitment.recruitmentSideMenu().click();\nrecruitment.vacanciesOption().click();\ncy.wait(2000);\ncy.intercept('GET', '**/api/v2/recruitment/vacancies**').as('getData');\nrecruitment.vacancyDropdown().click();\ncy.wait(1000);\nrecruitment.vacancyOption().click();\ncy.wait(1000);\nrecruitment.searchButton().click();\ncy.verifyFilterData();\nrecruitment.resetButton().click();",
+              "err": {},
+              "uuid": "b597f5e8-4031-46ec-aec6-892626b9d047",
+              "parentUUID": "8286304d-b51f-44ff-8d45-a05bbcbb84c3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Recruitment task - filter Hiring Manager",
+              "fullTitle": "Recruitment - Search functionality Recruitment task - filter Hiring Manager",
+              "timedOut": null,
+              "duration": 9886,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "recruitment.recruitmentSideMenu().click();\nrecruitment.vacanciesOption().click();\ncy.wait(2000);\ncy.intercept('GET', '**/api/v2/recruitment/vacancies**').as('getData');\nrecruitment.hiringManagerDropdown().click();\ncy.wait(1000);\nrecruitment.hiringManagerOption().click();\ncy.wait(1000);\nrecruitment.searchButton().click();\ncy.wait(1000);\ncy.verifyFilterData();\nrecruitment.resetButton().click();",
+              "err": {},
+              "uuid": "647d766c-10d0-4406-a3ef-901a504854ef",
+              "parentUUID": "8286304d-b51f-44ff-8d45-a05bbcbb84c3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Recruitment task - filter status",
+              "fullTitle": "Recruitment - Search functionality Recruitment task - filter status",
+              "timedOut": null,
+              "duration": 9256,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "recruitment.recruitmentSideMenu().click();\nrecruitment.vacanciesOption().click();\ncy.wait(2000);\ncy.intercept('GET', '**/api/v2/recruitment/vacancies**').as('getData');\nrecruitment.statusDropdown().click();\ncy.wait(1000);\nrecruitment.statusActiveOption().click();\ncy.wait(1000);\nrecruitment.searchButton().click();\ncy.verifyFilterData();\nrecruitment.resetButton().click();",
+              "err": {},
+              "uuid": "050bbaa9-e008-429e-8d6b-63085071cd19",
+              "parentUUID": "8286304d-b51f-44ff-8d45-a05bbcbb84c3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Recruitment task - filter Vacancy & Closed Status",
+              "fullTitle": "Recruitment - Search functionality Recruitment task - filter Vacancy & Closed Status",
+              "timedOut": null,
+              "duration": 12198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "recruitment.recruitmentSideMenu().click();\nrecruitment.vacanciesOption().click();\ncy.wait(2000);\ncy.intercept('GET', '**/api/v2/recruitment/vacancies**').as('getData');\nrecruitment.vacancyDropdown().click();\ncy.wait(1000);\nrecruitment.vacancyOption().click();\ncy.wait(1000);\nrecruitment.statusDropdown().click();\ncy.wait(1000);\nrecruitment.statusActiveOption().click();\ncy.wait(1000);\nrecruitment.searchButton().click();\ncy.verifyFilterData();\nrecruitment.resetButton().click();",
+              "err": {},
+              "uuid": "9c38fe89-f84e-462b-b659-9d658e8b819d",
+              "parentUUID": "8286304d-b51f-44ff-8d45-a05bbcbb84c3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b597f5e8-4031-46ec-aec6-892626b9d047",
+            "647d766c-10d0-4406-a3ef-901a504854ef",
+            "050bbaa9-e008-429e-8d6b-63085071cd19",
+            "9c38fe89-f84e-462b-b659-9d658e8b819d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40929,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

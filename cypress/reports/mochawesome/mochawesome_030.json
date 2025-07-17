@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-07-17T08:04:45.277Z",
+    "end": "2025-07-17T08:04:56.175Z",
+    "duration": 10898,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "292f5fa8-2334-47aa-b838-0a11590a6ecc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\my-info\\myInfo.cy.js",
+      "file": "cypress\\e2e\\my-info\\myInfo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e545d50-2a3f-462d-883c-857b55465fd1",
+          "title": "My Info functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My Info task",
+              "fullTitle": "My Info functionality My Info task",
+              "timedOut": null,
+              "duration": 10859,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// redirection to My Info page\nmyInfo.myInfoSideMenu().should('be.visible');\nmyInfo.myInfoSideMenu().click();\nmyInfo.noRecordsFoundLabel().should('be.visible');\n// Upload an attachment with a description.\nmyInfo.addAttachment().click();\ncy.wait(1000);\nmyInfo.browseButton().click();\ncy.wait(1000);\ncy.fixture('/upload/myInfo.jpg', null).as('image');\ncy.get('input[type=file]').selectFile('@image', {\n  force: true\n});\nmyInfo.commentInputArea().type('This is only a test');\ncy.wait(1000);\nmyInfo.saveAttachmentButton().click();\ncy.wait(1000);\n// Verify the file is uploaded and listed correctly.\nmyInfo.tableRow().should('be.visible');\n//  Download and confirm the file.\nmyInfo.downloadAttachmentButton().click();\ncy.readFile('cypress/downloads/myInfo.jpg', null, {\n  timeout: 10000\n}).then(buffer => {\n  expect(buffer.length).to.be.greaterThan(0);\n  //   Delete the attachment and confirm its removal.\n  myInfo.deleteAttachmentButton().click();\n  myInfo.deleteAttachmentConfirmationButton().click();\n  myInfo.noRecordsFoundLabel().should('be.visible');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: Expected to find content: 'No Records Found' within the element: <span.oxd-text.oxd-text--span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find content: 'No Records Found' within the element: <span.oxd-text.oxd-text--span> but never did.\n    at Context.eval (webpack://zadatak/./cypress/e2e/my-info/myInfo.cy.js:14:33)",
+                "diff": null
+              },
+              "uuid": "ac71131b-810c-452b-86b0-e05bd4e5cc4f",
+              "parentUUID": "2e545d50-2a3f-462d-883c-857b55465fd1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ac71131b-810c-452b-86b0-e05bd4e5cc4f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10859,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
