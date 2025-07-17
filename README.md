@@ -3,93 +3,63 @@
 
 This project is a Cypress-based automation setup for testing the OrangeHRM demo application.
 
-## Prerequisites
+## Running locally
 
-1. **Install [Node.js](https://nodejs.org/)**
+Install dependencies and setup config (Refer to Lastpass for an example):
 
----
+npm install
 
-## Initial Setup
+### Dependencies
 
-1. **Create a folder on your computer**
-2. **Open the folder in VS Code**
-3. **Open terminal in VS Code and run:**
+update cypress to the latest version
 
-   ```bash
-   npm init -y
-   npm install cypress
-   ```
+```
 
----
+npm install cypress@latest
+
+```
 
 ## Add Faker & Dotenv
 
-```bash
+```
 npm install --save-dev @faker-js/faker
 npm install dotenv
-```
 
----
+```
 
 ## Instal Download File Support Plugin
 
-1. Install `cypress-downloadfile`:
-
-```bash
+```
 npm install --save-dev cypress-downloadfile
+Add to `cypress/support/commands.js`:
 ```
 
-2. Add to `cypress/support/commands.js`:
-
-```js
 import 'cypress-downloadfile/lib/downloadFileCommand';
-```
-
----
 
 ## Install Mochawesome HTML Reports
 
-1. Install dependencies:
+Reporter https://www.npmjs.com/package/cypress-mochawesome-reporter
 
-```bash
+```
 npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
-```
 
-2. Update `cypress.config.js`:
-
-```js
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/reports/mochawesome',
-    overwrite: false,
-    html: true,
-    json: true,
-  },
-  e2e: {
-    setupNodeEvents(on, config) {
-      return config;
-    },
-    baseUrl: 'https://opensource-demo.orangehrmlive.com',
-    specPattern: 'cypress/e2e/**/*.cy.{js,ts}',
-  },
-});
-```
-
----
-
-## Run Tests (Headless)
-
-```bash
-npx cypress run
 ```
 
 Reports will be generated in:
-
-```
 cypress/reports/mochawesome/
+Reports can be visible in folder "reports" - refer to `index.html`.
+
+## Run Tests (Headless)
+
 ```
 
-Reports can be visible in folder "reports" - refer to `index.html`.
+npx cypress run
+
+```
+
+Run the tests to see in browser with the following command:
+
+```
+npx cypress open
+
+```
